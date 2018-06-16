@@ -45,4 +45,9 @@ class Manufacturer
     return manufacturer_data.map { |manufacturer| Manufacturer.new(manufacturer) }
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM manufacturers"
+    SqlRunner.run(sql)
+  end
+
 end
