@@ -1,6 +1,7 @@
 require('pry')
 require_relative('../models/item')
 require_relative('../models/manufacturer')
+require_relative('../models/group')
 
 
 manufacturer1 = Manufacturer.new({
@@ -16,15 +17,23 @@ manufacturer3 = Manufacturer.new({
   'email_address' => 'tetley@gmail.com'
   })
 
+  manufacturer1.save()
+  manufacturer2.save()
+  manufacturer3.save()
+
 group1 = Group.new({
   'name' => 'pasta sauces'
   })
 group2 = Group.new({
-  'name' = 'pastas'
+  'name' => 'pastas'
   })
-group1 = Group.new({
-  'name' = 'teas'
+group3 = Group.new({
+  'name' => 'teas'
   })
+
+  group1.save()
+  group2.save()
+  group3.save()
 
 item1 = Item.new({
   'name' => 'pesto',
@@ -59,6 +68,10 @@ item1 = Item.new({
   'stock_level' => 'stock-red'
    })
 
+   item1.save()
+   item2.save()
+   item3.save()
 
-   binding.pry
+
+  binding.pry
   nil
