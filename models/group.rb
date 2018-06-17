@@ -32,7 +32,15 @@ attr_reader :id, :name
     result = SqlRunner.run(sql, values).first
     group = Group.new(result)
     return transaction
+  end
 
+
+  def self.all()
+    sql = "SELECT * FROM transactions"
+    transactions_data = SqlRunner.run(sql)
+    transactions = map_items(transactions_data)
+    return transactions
+  end
 
   def self.delete_all()
     sql = "DELETE FROM groups"
