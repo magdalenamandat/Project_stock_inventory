@@ -41,9 +41,30 @@ class Item
     @id = id
   end
 
-  def manufacturer()
-    manufacturer = Manufacturer.find(@manufacturer_id)
-    return manufacturer
+  # def manufacturer()
+  #   manufacturer = Manufacturer.find(@manufacturer_id)
+  #   return manufacturer
+  # end
+
+  def update()
+    sql = "UPDATE items
+    SET
+    (
+      name,
+      price,
+      group_id,
+      manufacturer_id,
+      profit,
+      sell_price,
+      quantity,
+      stock_level
+    ) =
+    (
+      $1, $2, $3, $4, $5, $6, $7, $8
+    )
+    WHERE id = $9"
+    values = [@name, @price, @group_id, @manufacturer_id, @profit, @sell_price, @quantity, @stock_level]
+    SqlRunner.run(sql, values)
   end
 
 
