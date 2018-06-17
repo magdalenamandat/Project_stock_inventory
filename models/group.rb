@@ -42,6 +42,10 @@ attr_reader :id, :name
     return transactions
   end
 
+  def self.map_items(group_data)
+    return group_data.map { |group| Group.new(group) }
+  end
+
   def self.delete_all()
     sql = "DELETE FROM groups"
     SqlRunner.run(sql)
