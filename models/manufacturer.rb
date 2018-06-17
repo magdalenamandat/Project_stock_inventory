@@ -10,6 +10,7 @@ class Manufacturer
     @email_address = options['email_address']
   end
 
+#CREATE
   def save()
     sql = "INSERT INTO manufacturers
     (
@@ -45,6 +46,28 @@ class Manufacturer
 
   def self.map_items(manufacturer_data)
     return manufacturer_data.map { |manufacturer| Manufacturer.new(manufacturer) }
+  end
+
+  def update()
+    sql = "UPDATE manufacturers
+    SET
+    (
+      name,
+      email_address
+      ) =
+      (
+        $1, $2
+      )
+      WHERE id = $3"
+      values = [@name, @email_address]
+      SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM manufacturers
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
   end
 
   def self.delete_all()

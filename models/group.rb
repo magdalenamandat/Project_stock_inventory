@@ -46,6 +46,13 @@ attr_reader :id, :name
     return group_data.map { |group| Group.new(group) }
   end
 
+  def delete()
+    sql = "DELETE FROM groups
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM groups"
     SqlRunner.run(sql)
