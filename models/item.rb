@@ -41,10 +41,10 @@ class Item
     @id = id
   end
 
-  def manufacturer()
-    manufacturer = Manufacturer.find(@manufacturer_id)
-    return manufacturer
-  end
+  # def manufacturer()
+  #   manufacturer = Manufacturer.find(@manufacturer_id)
+  #   return manufacturer
+  # end
 
   def self.map_items(item_data)
     return item_data.map { |item| Item.new(item) }
