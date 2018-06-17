@@ -67,6 +67,12 @@ class Item
     SqlRunner.run(sql, values)
   end
 
+  def delete()
+      sql = "DELETE FROM items
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run(sql, values)
+    end
 
 
 
