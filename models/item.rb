@@ -9,13 +9,13 @@ class Item
   def initialize(options)
     @id = options ['id'].to_i if options['id']
     @name = options['name']
-    @price = options['price']
+    @price = options['price'].to_i
     @group_id = options['group_id'].to_i
     @manufacturer_id = options['manufacturer_id'].to_i
-    @profit = options['profit']
-    @sell_price = ['sell_price']
-    @quantity = ['quantity']
-    @stock_level = ['stock_level']
+    @profit = options['profit'].to_i
+    @sell_price = options['sell_price'].to_i
+    @quantity = options['quantity'].to_i
+    @stock_level = options['stock_level']
   end
 
   def save()

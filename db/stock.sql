@@ -18,11 +18,11 @@ CREATE TABLE manufacturers (
 CREATE TABLE items (
   id SERIAL8 primary key,
   name VARCHAR(255),
-  price INT,
+  price INT8,
   group_id INT8 REFERENCES groups(id),
   manufacturer_id INT8 REFERENCES manufacturers(id),
-  profit INT,
-  sell_price INT,
-  quantity INT,
+  profit INT8,
+  sell_price INT8,
+  quantity INT4,
   stock_level VARCHAR(255)
 );

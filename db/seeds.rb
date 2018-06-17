@@ -1,7 +1,7 @@
 require('pry')
-require_relative('../models/item')
 require_relative('../models/manufacturer')
 require_relative('../models/group')
+require_relative('../models/item')
 
 
 manufacturer1 = Manufacturer.new({
@@ -37,34 +37,34 @@ group3 = Group.new({
 
 item1 = Item.new({
   'name' => 'pesto',
-  'price' => 3.00,
+  'price' => '3',
   'group_id' => group1.id,
   'manufacturer_id' => manufacturer1.id,
-  'profit' => 0.5,
-  'sell_price' => 3.50,
-  'quantity' => 40,
+  'profit' => '1',
+  'sell_price' => '4',
+  'quantity' => '40',
   'stock_level' => 'stock-green'
   })
 
 item2 = Item.new({
   'name' => 'brown pasta',
-  'price' => 4.00,
+  'price' => '4',
   'group_id' => group2.id,
   'manufacturer_id' => manufacturer2.id,
-  'profit' => 0.5,
-  'sell_price' => 4.50,
-  'quantity' => 20,
+  'profit' => '1',
+  'sell_price' => '5',
+  'quantity' => '20',
   'stock_level' => 'stock-orange'
   })
 
-item1 = Item.new({
+item3 = Item.new({
   'name' => 'Camomile tea',
-  'price' => 2.00,
+  'price' => '2',
   'group_id' => group3.id,
   'manufacturer_id' => manufacturer3.id,
-  'profit' => 0.5,
-  'sell_price' => 2.50,
-  'quantity' => 5,
+  'profit' => '1',
+  'sell_price' => '3',
+  'quantity' => '5',
   'stock_level' => 'stock-red'
    })
 
