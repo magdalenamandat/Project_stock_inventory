@@ -81,4 +81,17 @@ class Item
         return items
       end
 
+      def self.map_items(item_data)
+        return item_data.map { |item| Item.new(item) }
+      end
+
+    def self.find(id)
+    sql = "SELECT * FROM items
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    item = Item.new(result)
+    return item
+  end
+
 end
