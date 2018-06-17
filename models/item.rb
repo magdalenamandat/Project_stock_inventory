@@ -58,34 +58,34 @@ class Item
       sell_price,
       quantity,
       stock_level
-    ) =
-    (
-      $1, $2, $3, $4, $5, $6, $7, $8
-    )
-    WHERE id = $9"
-    values = [@name, @price, @group_id, @manufacturer_id, @profit, @sell_price, @quantity, @stock_level]
-    SqlRunner.run(sql, values)
+      ) =
+      (
+        $1, $2, $3, $4, $5, $6, $7, $8
+      )
+      WHERE id = $9"
+      values = [@name, @price, @group_id, @manufacturer_id, @profit, @sell_price, @quantity, @stock_level]
+      SqlRunner.run(sql, values)
   end
 
   def delete()
-      sql = "DELETE FROM items
-      WHERE id = $1"
-      values = [@id]
-      SqlRunner.run(sql, values)
-    end
+    sql = "DELETE FROM items
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
-    def self.all()
-        sql = "SELECT * FROM items"
-        item_data = SqlRunner.run(sql)
-        items = map_items(item_data)
-        return items
-      end
+  def self.all()
+    sql = "SELECT * FROM items"
+    item_data = SqlRunner.run(sql)
+    items = map_items(item_data)
+    return items
+  end
 
-      def self.map_items(item_data)
-        return item_data.map { |item| Item.new(item) }
-      end
+  def self.map_items(item_data)
+    return item_data.map { |item| Item.new(item) }
+  end
 
-    def self.find(id)
+  def self.find(id)
     sql = "SELECT * FROM items
     WHERE id = $1"
     values = [id]
@@ -93,5 +93,5 @@ class Item
     item = Item.new(result)
     return item
   end
-
+  
 end
