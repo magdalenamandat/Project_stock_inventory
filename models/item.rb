@@ -74,6 +74,11 @@ class Item
       SqlRunner.run(sql, values)
     end
 
-
+    def self.all()
+        sql = "SELECT * FROM items"
+        item_data = SqlRunner.run(sql)
+        items = map_items(item_data)
+        return items
+      end
 
 end
