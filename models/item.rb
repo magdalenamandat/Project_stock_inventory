@@ -93,5 +93,10 @@ class Item
     item = Item.new(result)
     return item
   end
-  
+
+  def self.delete_all()
+    sql = "DELETE FROM items;"
+    SqlRunner.run(sql)
+  end
+
 end
