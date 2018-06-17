@@ -31,7 +31,7 @@ class Manufacturer
     sql = "SELECT * FROM manufacturers
     WHERE id = $1"
     values = [id]
-    result = SqlRunner.run(sql ,values).first
+    result = SqlRunner.run(sql, values).first
     manufacturer = House.new(result)
     return manufacturer
   end

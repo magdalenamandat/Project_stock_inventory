@@ -3,6 +3,10 @@ require_relative('../models/manufacturer')
 require_relative('../models/group')
 require_relative('../models/item')
 
+Manufacturer.delete_all()
+Group.delete_all()
+Item.delete_all()
+
 
 manufacturer1 = Manufacturer.new({
   'name' => 'Biona',
