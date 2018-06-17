@@ -31,19 +31,32 @@ attr_reader :id, :name
     values = [id]
     result = SqlRunner.run(sql, values).first
     group = Group.new(result)
-    return transaction
+    return group
   end
-
 
   def self.all()
     sql = "SELECT * FROM transactions"
-    transactions_data = SqlRunner.run(sql)
-    transactions = map_items(transactions_data)
-    return transactions
+    group_data = SqlRunner.run(sql)
+    groups = map_items(group_data)
+    return groups
   end
 
   def self.map_items(group_data)
     return group_data.map { |group| Group.new(group) }
+  end
+
+  def update()
+    sql = "UPDATE groups
+    SET
+    (
+      name,
+    ) =
+    (
+      $1
+    )
+    WHERE id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
   end
 
   def delete()

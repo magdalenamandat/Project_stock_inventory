@@ -34,17 +34,17 @@ class Item
     (
     $1, $2, $3, $4, $5, $6, $7, $8
     )
-    RETURNING *"
+    RETURNING id"
     values = [@name, @price, @group_id, @manufacturer_id, @profit, @sell_price, @quantity, @stock_level]
     items_data = SqlRunner.run(sql, values)
     id = items_data.first()['id'].to_i
     @id = id
   end
 
-  # def manufacturer()
-  #   manufacturer = Manufacturer.find(@manufacturer_id)
-  #   return manufacturer
-  # end
+  def manufacturer()
+    manufacturer = Manufacturer.find(@manufacturer_id)
+    return manufacturer
+  end
 
   def self.map_items(item_data)
     return item_data.map { |item| Item.new(item) }
@@ -78,13 +78,13 @@ class Item
       sell_price,
       quantity,
       stock_level
-      ) =
-      (
-        $1, $2, $3, $4, $5, $6, $7, $8
-      )
-      WHERE id = $9"
-      values = [@name, @price, @group_id, @manufacturer_id, @profit, @sell_price, @quantity, @stock_level]
-      SqlRunner.run(sql, values)
+    ) =
+    (
+      $1, $2, $3, $4, $5, $6, $7, $8
+    )
+    WHERE id = $9"
+    values = [@name, @price, @group_id, @manufacturer_id, @profit, @sell_price, @quantity, @stock_level, @id]
+    SqlRunner.run(sql, values)
   end
 
   def delete()
