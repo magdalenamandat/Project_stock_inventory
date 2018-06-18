@@ -3,9 +3,9 @@ require_relative('../models/manufacturer')
 require_relative('../models/group')
 require_relative('../models/item')
 
+Item.delete_all()
 Manufacturer.delete_all()
 Group.delete_all()
-Item.delete_all()
 
 
 manufacturer1 = Manufacturer.new({
@@ -44,10 +44,8 @@ item1 = Item.new({
   'price' => '3',
   'group_id' => group1.id,
   'manufacturer_id' => manufacturer1.id,
-  'profit' => '1',
   'sell_price' => '4',
-  'quantity' => '40',
-  'stock_level' => 'stock-green'
+  'quantity' => '40'
   })
 
 item2 = Item.new({
@@ -55,10 +53,8 @@ item2 = Item.new({
   'price' => '4',
   'group_id' => group2.id,
   'manufacturer_id' => manufacturer2.id,
-  'profit' => '1',
   'sell_price' => '5',
-  'quantity' => '20',
-  'stock_level' => 'stock-orange'
+  'quantity' => '20'
   })
 
 item3 = Item.new({
@@ -66,10 +62,8 @@ item3 = Item.new({
   'price' => '2',
   'group_id' => group3.id,
   'manufacturer_id' => manufacturer3.id,
-  'profit' => '1',
   'sell_price' => '3',
-  'quantity' => '5',
-  'stock_level' => 'stock-red'
+  'quantity' => '5'
    })
 
    item1.save()

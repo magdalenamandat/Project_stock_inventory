@@ -21,8 +21,6 @@ CREATE TABLE items (
   price INT8,
   group_id INT8 REFERENCES groups(id),
   manufacturer_id INT8 REFERENCES manufacturers(id),
-  profit INT8,
   sell_price INT8,
-  quantity INT4,
-  stock_level VARCHAR(255)
+  quantity INT4
 );

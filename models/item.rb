@@ -1,10 +1,10 @@
+
 require_relative('../db/sql_runner')
 
 class Item
 
-  attr_accessor :name, :price, :group_id, :manufacturer_id, :profit, :sell_price, :quantity, :stock_level
+  attr_reader :id, :name, :price, :group_id, :manufacturer_id, :sell_price, :quantity
 
-  attr_reader :id
 
   def initialize(options)
     @id = options ['id'].to_i if options['id']
@@ -12,10 +12,8 @@ class Item
     @price = options['price'].to_i
     @group_id = options['group_id'].to_i
     @manufacturer_id = options['manufacturer_id'].to_i
-    @profit = options['profit'].to_i
     @sell_price = options['sell_price'].to_i
     @quantity = options['quantity'].to_i
-    @stock_level = options['stock_level']
   end
 
   def save()
@@ -25,17 +23,15 @@ class Item
     price,
     group_id,
     manufacturer_id,
-    profit,
     sell_price,
-    quantity,
-    stock_level
+    quantity
     )
     VALUES
     (
-    $1, $2, $3, $4, $5, $6, $7, $8
+    $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@name, @price, @group_id, @manufacturer_id, @profit, @sell_price, @quantity, @stock_level]
+    values = [@name, @price, @group_id, @manufacturer_id, @sell_price, @quantity]
     items_data = SqlRunner.run(sql, values)
     id = items_data.first()['id'].to_i
     @id = id
@@ -74,16 +70,14 @@ class Item
       price,
       group_id,
       manufacturer_id,
-      profit,
       sell_price,
-      quantity,
-      stock_level
+      quantity
     ) =
     (
-      $1, $2, $3, $4, $5, $6, $7, $8
+      $1, $2, $3, $4, $5, $6
     )
-    WHERE id = $9"
-    values = [@name, @price, @group_id, @manufacturer_id, @profit, @sell_price, @quantity, @stock_level, @id]
+    WHERE id = $7"
+    values = [@name, @price, @group_id, @manufacturer_id, @sell_price, @quantity, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -99,4 +93,22 @@ class Item
     SqlRunner.run(sql)
   end
 
+  def check_stock_lvl()
+    if @quantity >= 40
+      return "stock-green"
+    elsif @quantity >= 20
+      return "stock-orange"
+    else
+      return "stock-red"
+    end
+  end
+  # def check_stock_lvl_as_text()
+  #   if @quantity >= 40
+  #     return "High Stock"
+  #   elsif @quantity >= 20
+  #     return "stock-orange"
+  #   else
+  #     return "stock-red"
+  #   end
+  # end
 end
