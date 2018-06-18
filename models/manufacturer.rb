@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 
 class Manufacturer
 
-  attr_reader :id
+  attr_reader :id, :name
   attr_accessor :name, :email_address
 
   def initialize(options)
@@ -42,7 +42,7 @@ class Manufacturer
     WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values).first
-    manufacturer = House.new(result)
+    manufacturer = Manufacturer.new(result)
     return manufacturer
   end
 

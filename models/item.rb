@@ -1,5 +1,6 @@
 
 require_relative('../db/sql_runner')
+require_relative('group')
 
 class Item
 
@@ -37,10 +38,15 @@ class Item
     @id = id
   end
 
-  # def manufacturer()
-  #   manufacturer = Manufacturer.find(@manufacturer_id)
-  #   return manufacturer
-  # end
+  def manufacturer()
+    manufacturer = Manufacturer.find(@manufacturer_id)
+    return manufacturer
+  end
+
+  def group()
+    group = Group.find(@group_id)
+    return group
+  end
 
   def self.map_items(item_data)
     return item_data.map { |item| Item.new(item) }
@@ -102,6 +108,9 @@ class Item
       return "stock-red"
     end
   end
+
+
+
   # def check_stock_lvl_as_text()
   #   if @quantity >= 40
   #     return "High Stock"
