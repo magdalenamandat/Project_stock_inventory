@@ -9,8 +9,16 @@ get '/manufacturers' do
   erb(:"manufacturers/index")
 end
 
+post '/manufacturers' do
+  @manufacturer = Manufacturer.new(params)
+  @manufacturer.save
+  # redirect to '/manufacturers'
+  erb(:"manufacturers/create")
+end
+
 get '/manufacturers/new' do
   @manufacturers = Manufacturer.all()
+  @groups = Group.all()
   erb(:"manufacturers/new")
 end
 

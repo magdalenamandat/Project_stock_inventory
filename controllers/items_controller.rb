@@ -10,8 +10,10 @@ get '/items' do
 end
 
 post '/items' do
-  Item.new(params).save
+  @item = Item.new(params)
+  @item.save
   # redirect to '/items'
+  erb(:"items/create")
 end
 
 get '/items/new' do
