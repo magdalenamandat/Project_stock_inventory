@@ -1,6 +1,13 @@
 <% @manufacturers.each do |manufacturer| %>
-  <p>Name: <a href="/manufacturer/<%=manufacturer.id  %>"><%= manufacturer.name %></a></p>
-  <p>Email address: <%= manufacturer.email_address %></p>
-
+<dl>
+  <dt>Name:</dt>
+  <dd><a href="/manufacturers/<%=manufacturer.id  %>">
+    <%= manufacturer.name %>
+  </a></dd>
+  <dt>Email:</dt>
+  <dd><%= manufacturer.email_address %></dd>
+</dl>
+<a href="/manufacturers/<%=manufacturer.id  %>/edit">EDIT </a>
   <hr />
+
 <% end %>

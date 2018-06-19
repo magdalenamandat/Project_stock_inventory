@@ -9,13 +9,30 @@ get '/items' do
   erb(:"items/index")
 end
 
+post '/items' do
+  Item.new(params).save
+  # redirect to '/items'
+end
+
 get '/items/new' do
+ @manufacturers = Manufacturer.all()
+ @groups = Group.all()
   erb(:"items/new")
 end
 
 get '/items/:id' do
   @item = Item.find(params[:id].to_i)
   erb(:"items/show")
+end
+
+post '/items/:id' do # update
+  Item.new( params ).update
+  redirect to '/items'
+end
+
+get '/items/:id/edit' do
+  @item = Item.find( params[:id] )
+  erb( :"items/edit" )
 end
 
 post '/items/:id/delete' do # delete

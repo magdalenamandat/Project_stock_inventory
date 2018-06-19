@@ -3,15 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Stock inventory</title>
-
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
+
     <nav>
       <ul>
-        <a href="/manufacturers"><input type="button" value="Manufactures"></a>
-        <a href="/items"><input type="button" value="Items"></a>
+        <li><a href="/manufacturers">Manufacturers</a</li>
+        <li><a href="/items">All items in stock</a></li>
+        <li><a href="/items/new">Add new items</a></li>
       </ul>
+
     </nav>
+    <main>
     <%= yield %>
+    </main>
   </body>
 </html>

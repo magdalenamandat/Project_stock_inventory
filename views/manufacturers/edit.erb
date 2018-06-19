@@ -1,0 +1,19 @@
+<form method="post" action="/manufacturerss/<%= @manufacturer.id %>">
+  <div>
+  <label for="Manufacturer-name-field"> Name:</label>
+  <input
+  type="text"
+  name="name"
+  id="name-field"
+  value="<%= @manufacturer.name %>"
+  />
+  </div>
+
+  <div>
+    <label for="email_address">Email</label>
+    <input type="text" name="email" id="email" value="<%= @manufacturer.email_address %>"/>
+  </div>
+
+  <div>
+    <input type="Submit" value="Save"/>
+  </div>

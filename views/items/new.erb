@@ -1,4 +1,56 @@
+<form method="post" action="/items">
+  <div>
+  <label for="Item-name-field"> Item name:</label>
+  <input
+  type="text"
+  name="name"
+  id="name-field"
+  />
+  </div>
 
-<form  method="post" action="/items">
-  <label for="name">Item Name</label>
-  <input type="text" name="name" id="name" placeholder="Item name here here"/>
+<!-- <div>
+  <label for="price">Price</label>
+  <input type="number" name="price" id="price"/>
+</div> -->
+
+<div>
+  <label for="manufacturer_name">Manufacturer</label>
+  <select name="manufacturer" id="manufacturer">
+    <option value="Biona">Biona</option>
+    <option value="Suma">Suma</option>
+    <option value="Tetley">Tetley</option>
+  </select>
+  <!-- CHANGE INPUT TO DROPDOWN OF ALL MANUFACTURERS - CHECK HARRY POTTER EXAMPLE -->
+  <!-- <input type="text" name="manufacturer_id" id="manufacturer_name" /> -->
+</div>
+
+<div>
+  <label for="group_name">Group</label>
+  <!-- SAME HERE -->
+  <select name="group" id="group">
+    <option value="pasta_sauces">pasta sauces</option>
+    <option value="pastas">pastas</option>
+    <option value="teas">teas</option>
+  </select>
+  <!-- <input type="text" name="group_id" id="group_name" /> -->
+</div>
+
+<div>
+  <label for="price">Price</label>
+  <input type="number" name="price" id="price" />
+</div>
+
+<div>
+  <label for="sell_price">Sell price</label>
+  <input type="number" name="sell_price" id="sell_price" />
+</div>
+
+<div>
+  <label for="quantity">Quantity</label>
+  <input type="number" name="quantity" id="quantity" />
+</div>
+
+
+<div>
+  <input type="Submit" value="Save"/>
+</div>

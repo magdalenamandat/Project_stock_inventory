@@ -1,6 +1,6 @@
 <p>Name: <%= @manufacturer.name %></p>
 <p>Email: <%= @manufacturer.email_address %></p>
 
-<form method="post" action="/items/<%= @item.id %>/delete">
+<form method="post" action="/manufacturers/<%= @manufacturer.id %>/delete">
 <input type="submit" value="Delete manufacturer"/>
 </form>

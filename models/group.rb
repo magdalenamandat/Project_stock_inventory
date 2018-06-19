@@ -26,11 +26,6 @@ attr_reader :id, :name
     @id = id.to_i
   end
 
-  def group()
-    group = Group.find(@group_id)
-    return group
-  end
-
   def self.find(id)
     sql = "SELECT * FROM groups
     WHERE id = $1"
@@ -41,7 +36,7 @@ attr_reader :id, :name
   end
 
   def self.all()
-    sql = "SELECT * FROM transactions"
+    sql = "SELECT * FROM groups"
     group_data = SqlRunner.run(sql)
     groups = map_items(group_data)
     return groups

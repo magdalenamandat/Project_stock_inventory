@@ -1,5 +1,7 @@
-<h1>Items</h1>
-
+<header>
+  <h1>All items in stock</h1>
+</header>
+<a href="items/new"></a>
 <table>
   <tr>
     <th>Name</th>
@@ -16,7 +18,8 @@
     <td><%= item.manufacturer().name() %></td>
     <td><%= item.price %></td>
     <td><%= item.sell_price %></td>
-    <td><%= item.quantity %></td>
+    <td class="<%= item.check_stock_lvl %>"><%= item.quantity %></td>
+    <td> <a href="/items/<%=item.id  %>/edit"> EDIT </a> </td>
 
   </tr>
   <% end %>
