@@ -26,13 +26,13 @@ manufacturer3 = Manufacturer.new({
   manufacturer3.save()
 
 group1 = Group.new({
-  'name' => 'pasta sauces'
+  'name' => 'food & drinks'
   })
 group2 = Group.new({
-  'name' => 'pastas'
+  'name' => 'supplements'
   })
 group3 = Group.new({
-  'name' => 'teas'
+  'name' => 'tests'
   })
 
   group1.save()
@@ -51,20 +51,20 @@ item1 = Item.new({
 item2 = Item.new({
   'name' => 'brown pasta',
   'price' => '4.00',
-  'group_id' => group2.id,
+  'group_id' => group1.id,
   'manufacturer_id' => manufacturer2.id,
   'sell_price' => '5.00',
   'quantity' => '20'
   })
 
-item3 = Item.new({
-  'name' => 'Camomile tea',
-  'price' => '2.00',
-  'group_id' => group3.id,
-  'manufacturer_id' => manufacturer3.id,
-  'sell_price' => '3.00',
-  'quantity' => '5'
-   })
+# item3 = Item.new({
+#   'name' => 'Camomile tea',
+#   'price' => '2.00',
+#   'group_id' => group1.id,
+#   'manufacturer_id' => manufacturer3.id,
+#   'sell_price' => '3.00',
+#   'quantity' => '5'
+#    })
 
    item1.save()
    item2.save()
