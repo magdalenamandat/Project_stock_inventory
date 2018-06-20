@@ -41,28 +41,28 @@ group3 = Group.new({
 
 item1 = Item.new({
   'name' => 'pesto',
-  'price' => '3',
+  'price' => '3.00',
   'group_id' => group1.id,
   'manufacturer_id' => manufacturer1.id,
-  'sell_price' => '4',
+  'sell_price' => '4.00',
   'quantity' => '40'
   })
 
 item2 = Item.new({
   'name' => 'brown pasta',
-  'price' => '4',
+  'price' => '4.00',
   'group_id' => group2.id,
   'manufacturer_id' => manufacturer2.id,
-  'sell_price' => '5',
+  'sell_price' => '5.00',
   'quantity' => '20'
   })
 
 item3 = Item.new({
   'name' => 'Camomile tea',
-  'price' => '2',
+  'price' => '2.00',
   'group_id' => group3.id,
   'manufacturer_id' => manufacturer3.id,
-  'sell_price' => '3',
+  'sell_price' => '3.00',
   'quantity' => '5'
    })
 

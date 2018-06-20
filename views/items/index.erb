@@ -10,6 +10,7 @@
     <th>Price</th>
     <th>Sell price</th>
     <th>Quantity</th>
+    <th>Profit</th>
   </tr>
   <% for item in @items %>
   <tr>
@@ -19,7 +20,8 @@
     <td><%= item.price %></td>
     <td><%= item.sell_price %></td>
     <td class="<%= item.check_stock_lvl %>"><%= item.quantity %></td>
-    <td> <a href="/items/<%=item.id  %>/edit"> EDIT </a> </td>
+    <td><%= item.total_profit() %></td>
+    <td> <a href="/items/<%=item.id  %>"> EDIT </a> </td>
 
   </tr>
   <% end %>

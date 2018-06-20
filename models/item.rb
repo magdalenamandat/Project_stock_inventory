@@ -10,10 +10,10 @@ class Item
   def initialize(options)
     @id = options ['id'].to_i if options['id']
     @name = options['name']
-    @price = options['price'].to_i
+    @price = options['price'].to_f
     @group_id = options['group_id'].to_i
     @manufacturer_id = options['manufacturer_id'].to_i
-    @sell_price = options['sell_price'].to_i
+    @sell_price = options['sell_price'].to_f
     @quantity = options['quantity'].to_i
   end
 
@@ -47,6 +47,17 @@ class Item
     group = Group.find(@group_id)
     return group
   end
+
+  def profit_margin()
+    profit = @sell_price - @price
+    return profit
+  end
+
+  def total_profit()
+    total_profit = profit_margin() * @quantity
+    return total_profit
+  end
+
 
   def self.map_items(item_data)
     return item_data.map { |item| Item.new(item) }

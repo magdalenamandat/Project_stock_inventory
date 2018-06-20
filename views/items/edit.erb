@@ -11,12 +11,18 @@
 
 <div>
   <label for="manufacturer_name">Manufacturer</label>
-  <input type="text" name="manufacturer_id" id="manufacturer_name" value="<%= @item.manufacturer.name %>"/>
+  <input type="text" name="manufacturer_id" id="manufacturer_name" value="<%= @item.manufacturer_id %>"/>
+  <!-- <% for manufacturer in @manufacturers  %>
+      <option value="<%=manufacturer.id %>"></option>
+      <% end  %> -->
 </div>
 
 <div>
   <label for="group_name">Group</label>
-  <input type="text" name="group_id" id="group_name" value="<%= @item.group.name %>"/>
+  <input type="text" name="group_id" id="group_name" value="<%= @item.group_id %>"/>
+  <!-- <% for group in @groups  %>
+      <option value="<%=group.id %>"></option>
+      <% end  %> -->
 </div>
 
 <div>

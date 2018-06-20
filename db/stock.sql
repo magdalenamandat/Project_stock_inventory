@@ -18,9 +18,9 @@ CREATE TABLE manufacturers (
 CREATE TABLE items (
   id SERIAL8 primary key,
   name VARCHAR(255),
-  price INT8,
+  price float,
   group_id INT8 REFERENCES groups(id),
   manufacturer_id INT8 REFERENCES manufacturers(id),
-  sell_price INT8,
+  sell_price float,
   quantity INT4
 );
