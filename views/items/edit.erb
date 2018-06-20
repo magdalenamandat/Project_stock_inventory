@@ -11,18 +11,28 @@
 
 <div>
   <label for="manufacturer_name">Manufacturer</label>
-  <input type="text" name="manufacturer_id" id="manufacturer_name" value="<%= @item.manufacturer_id %>"/>
-  <!-- <% for manufacturer in @manufacturers  %>
-      <option value="<%=manufacturer.id %>"></option>
-      <% end  %> -->
+  <select name="manufacturer_id" id="manufacturer_name">
+        <% @manufacturers.each do |manufacturer| %>
+          <% if manufacturer.id == @item.manufacturer_id %>
+            <option value="<%= manufacturer.id %>" selected = "selected"><%= manufacturer.name %></option>
+          <% else %>
+            <option value="<%= manufacturer.id %>"><%= manufacturer.name %></option>
+          <% end %>
+        <% end %>
+      </select>
 </div>
 
 <div>
   <label for="group_name">Group</label>
-  <input type="text" name="group_id" id="group_name" value="<%= @item.group_id %>"/>
-  <!-- <% for group in @groups  %>
-      <option value="<%=group.id %>"></option>
-      <% end  %> -->
+  <select name="group_id" id="group_name">
+        <% @groups.each do |group| %>
+          <% if group.id == @item.group_id %>
+            <option value="<%= group.id %>" selected = "selected"><%= group.name %></option>
+          <% else %>
+            <option value="<%= group.id %>"><%= group.name %></option>
+          <% end %>
+        <% end %>
+      </select>
 </div>
 
 <div>

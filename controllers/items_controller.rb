@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative('../models/item')
+require_relative('../models/manufacturer')
 also_reload('../models/*')
 
 
@@ -34,6 +35,9 @@ end
 
 get '/items/:id/edit' do
   @item = Item.find( params[:id] )
+  @items = Item.all()
+  @manufacturers = Manufacturer.all()
+  @groups = Group.all()
   erb( :"items/edit" )
 end
 
