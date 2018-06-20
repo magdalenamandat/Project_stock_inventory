@@ -5,7 +5,7 @@
   <input
   type="text"
   name="name"
-  id="name-field"
+  id="Item-name-field"
   />
   </div>
 
@@ -15,23 +15,24 @@
 </div> -->
 
 <div>
-  <label for="manufacturer_name">Manufacturer</label>
-  <select name="manufacturer" id="manufacturer">
-    <option value="Biona">Biona</option>
-    <option value="Suma">Suma</option>
-    <option value="Tetley">Tetley</option>
+  <label for="manufacturer_name">Select manufacturer</label>
+  <select name="manufacturer_id" id="manufacturer_name">
+    <% @manufacturers.each do |manufacturer| %>
+    <option value="<%= manufacturer.id  %>"><%= manufacturer.name %></option>
+    <% end %>
   </select>
   <!-- CHANGE INPUT TO DROPDOWN OF ALL MANUFACTURERS - CHECK HARRY POTTER EXAMPLE -->
-  <!-- <input type="text" name="manufacturer_id" id="manufacturer_name" /> -->
+  <!-- <input type="text" name="manufacturer_id" id="manufacturer_name" /> <select name="house_id" id="house_select"> -->
+
 </div>
 
 <div>
-  <label for="group_name">Group</label>
+  <label for="group_name">Select group</label>
   <!-- SAME HERE -->
-  <select name="group" id="group">
-    <option value="pasta_sauces">pasta sauces</option>
-    <option value="pastas">pastas</option>
-    <option value="teas">teas</option>
+  <select name="group_id" id="group_name">
+    <% @groups.each do |group| %>
+    <option value="<%= group.id  %>"><%= group.name %></option>
+    <% end %>
   </select>
   <!-- <input type="text" name="group_id" id="group_name" /> -->
 </div>

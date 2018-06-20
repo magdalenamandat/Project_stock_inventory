@@ -17,8 +17,8 @@ post '/items' do
 end
 
 get '/items/new' do
- @manufacturers = Manufacturer.all()
- @groups = Group.all()
+  @manufacturers = Manufacturer.all()
+  @groups = Group.all()
   erb(:"items/new")
 end
 
