@@ -15,40 +15,62 @@ th {
     color: white;
 }
 
-
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
-    align-content: center;
-
-    display: flex;
+    overflow: hidden;
+    background-color: #8fa68c;
 }
 
-/* li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-} */
+li {
+    float: left;
+}
 
-/* li a.active {
-    background-color: #4CAF50;
+li a {
+    display: block;
     color: white;
-} */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
 li a:hover:not(.active) {
-    background-color: #555;
-    color: white;
+    background-color: #111;
 }
+
+dl {
+    border: 3px double #ccc;
+    padding: 0.5em;
+  }
+  dt {
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+    color: green;
+  }
+  dt::after {
+    content: ":";
+  }
+  dd {
+    margin: 0 0 0 110px;
+    padding: 0 0 0.5em 0;
+  }
+
+  /* label {
+  color: #B4886B;
+  font-weight: bold;
+  display: block;
+  width: 150px;
+  float: left;
+  }
+  label:after { content: ": " } */
 
 .active {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #627a6a;
 }
-
 
 .hidden-table-border {
   border: 1px solid transparent;

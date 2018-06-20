@@ -1,10 +1,10 @@
 <% @manufacturers.each do |manufacturer| %>
 <dl>
-  <dt>Name:</dt>
+  <dt>Name</dt>
   <dd><a href="/manufacturers/<%=manufacturer.id  %>">
     <%= manufacturer.name %>
   </a></dd>
-  <dt>Email:</dt>
+  <dt>Email</dt>
   <dd><%= manufacturer.email_address %></dd>
 </dl>
 <a href="/manufacturers/<%=manufacturer.id  %>/edit">EDIT </a>
