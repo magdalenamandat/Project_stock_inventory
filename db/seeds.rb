@@ -57,14 +57,14 @@ item2 = Item.new({
   'quantity' => '20'
   })
 
-# item3 = Item.new({
-#   'name' => 'Camomile tea',
-#   'price' => '2.00',
-#   'group_id' => group1.id,
-#   'manufacturer_id' => manufacturer3.id,
-#   'sell_price' => '3.00',
-#   'quantity' => '5'
-#    })
+item3 = Item.new({
+  'name' => 'Camomile tea',
+  'price' => '2.00',
+  'group_id' => group1.id,
+  'manufacturer_id' => manufacturer3.id,
+  'sell_price' => '3.00',
+  'quantity' => '5'
+   })
 
    item1.save()
    item2.save()
