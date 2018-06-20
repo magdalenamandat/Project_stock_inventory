@@ -9,11 +9,6 @@ attr_accessor :items
     @items = items
   end
 
-def single_item_profit
-  profit = @item.sell_price - @item.price
-  return profit
-
-end
 
   def stock_value
       total = 0

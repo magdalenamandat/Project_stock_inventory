@@ -58,6 +58,16 @@ class Item
     return total_profit
   end
 
+  def self.total_profit_of_all_items
+    all_items = self.all()
+    counter = 0
+    for item in all_items
+      counter += item.total_profit()
+    end
+    return counter
+
+  end
+
 
   def self.map_items(item_data)
     return item_data.map { |item| Item.new(item) }

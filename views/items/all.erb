@@ -2,7 +2,7 @@
 <header>
   <h1>Welcome to your stock inventory</h1>
 </header>
-<a href="items/new"></a>
+<a href="items/all"></a>
 <table>
   <tr>
     <th>Name</th>
@@ -10,8 +10,8 @@
     <th>Manufacturer</th>
     <th>Price</th>
     <th>Sell price</th>
-    <th>Quantity</th>
     <th>Profit</th>
+    <th>Quantity</th>
   </tr>
   <% for item in @items %>
   <tr>
@@ -20,9 +20,10 @@
     <td><%= item.manufacturer().name() %></td>
     <td><%= item.price %></td>
     <td><%= item.sell_price %></td>
-    <td class="<%= item.check_stock_lvl %>"><%= item.quantity %></td>
     <td><%= item.total_profit() %></td>
-    <td> <a href="/items/<%=item.id  %>/edit"> EDIT </a> </td>
+    <td class="<%= item.check_stock_lvl %>"><%= item.quantity %></td>
+
+
 
   </tr>
   <% end %>
