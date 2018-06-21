@@ -4,12 +4,6 @@ require_relative('../models/item')
 require_relative('../models/manufacturer')
 also_reload('../models/*')
 
-
-get '/items/all' do
-  @items = Item.all()
-  erb(:"items/all")
-end
-
 get '/items' do
   @items = Item.all()
   erb(:"items/index")
