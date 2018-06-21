@@ -1,4 +1,8 @@
 <div>
+  <dl>
+    <dt>Name</dt>
+    <dd> <%= @item.name %> </dd>
+  </dl>
 <p>Name: <%= @item.name %></p>
 <p>Price: <%= @item.price %></p>
 <p>Group id: <%= @item.group_id %></p>
@@ -10,3 +14,13 @@
 <form method="post" action="/items/<%= @item.id %>/delete">
 <input type="submit" value="Delete item"/>
 </form>
+
+
+<!-- <dl>
+  <dt>Name</dt>
+  <dd><a href="/manufacturers/<%=manufacturer.id  %>">
+    <%= manufacturer.name %>
+  </a></dd>
+  <dt>Email</dt>
+  <dd><%= manufacturer.email_address %></dd>
+</dl> -->
