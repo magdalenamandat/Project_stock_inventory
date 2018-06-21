@@ -15,6 +15,7 @@
     <th>Sell price</th>
     <th>Quantity</th>
     <th>Profit</th>
+    <th>Edit</th>
   </tr>
   <% for item in @items %>
   <tr>
@@ -25,7 +26,7 @@
     <td><%= item.sell_price %></td>
     <td class="<%= item.check_stock_lvl %>"><%= item.quantity %></td>
     <td><%= item.total_profit() %></td>
-    <td class="hidden-table-border"> <a href="/items/<%=item.id  %>/edit"> EDIT </a> </td>
+    <td> <a href="/items/<%=item.id  %>/edit"> EDIT </a> </td>
 
   </tr>
   <% end %>
