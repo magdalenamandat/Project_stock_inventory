@@ -1,9 +1,11 @@
+<div>
 <p>Name: <%= @item.name %></p>
 <p>Price: <%= @item.price %></p>
 <p>Group id: <%= @item.group_id %></p>
 <p>Manufacturer id: <%= @item.manufacturer_id %></p>
 <p>Sell price: <%= @item.sell_price %></p>
 <p>Quantity: <%= @item.quantity %></p>
+</div>
 
 <form method="post" action="/items/<%= @item.id %>/delete">
 <input type="submit" value="Delete item"/>
