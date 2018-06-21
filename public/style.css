@@ -119,7 +119,17 @@ p {
   font-size: 1em;
 }
 
+main {
+  width: 33%;
+  /* display: inline-block; */
+  margin: 0 auto;
+  display: table;
+}
 
+h1 {
+  margin: 0 auto;
+  display: table;  
+}
 
 .active {
     background-color: #627a6a;

@@ -1,5 +1,7 @@
+<div>
 <p>Name: <%= @manufacturer.name %></p>
 <p>Email: <%= @manufacturer.email_address %></p>
+</div>
 
 <form method="post" action="/manufacturers/<%= @manufacturer.id %>/delete">
 <input type="submit" value="Delete manufacturer"/>
