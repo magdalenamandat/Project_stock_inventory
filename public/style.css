@@ -24,6 +24,11 @@ ul {
     background-color: #8fa68c;
 }
 
+a {
+  text-decoration: none;
+  color: #041fa5;
+}
+
 li {
   float: left;
   font-size: 1.3em;
@@ -128,7 +133,7 @@ main {
 
 h1 {
   margin: 0 auto;
-  display: table;  
+  display: table;
 }
 
 .active {
@@ -142,7 +147,7 @@ h1 {
 
 
 .stock-green {
-    background-color: rgb(0,128,0, 0.6);
+    background-color: rgba(0,128,0, 0.6);
 
 }
 
